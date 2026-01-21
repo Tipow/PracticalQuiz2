@@ -30,8 +30,10 @@
   </a-entity>
 
   <!-- LIGHT -->
-  <a-light type="point" intensity="2" position="0 0 0"></a-light>
-  <a-light type="ambient" intensity="0.05"></a-light>
+  <a-light type="point" intensity="1.5" position="0 0 0"></a-light>
+  <a-light type="ambient" intensity="1"></a-light>
+
+
   <a-sphere
   radius="250"
   segments-width="64"
@@ -57,8 +59,11 @@
     material="
       src: #sunTex;
       emissiveIntensity: 1;
-      shader: standard;
-    "></a-sphere>
+      shader: standard;   
+    ">
+
+</a-entity>
+  </a-sphere>
 </a-entity>
 
   <!-- MERCURY -->
@@ -116,7 +121,7 @@
     material="src: #saturnTex">
   </a-sphere>
 
-  <!-- Rings (FIXED) -->
+  <!-- Rings-->
   <a-ring
     radius-inner="1.4"
     radius-outer="2.4"
