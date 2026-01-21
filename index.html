@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Solar System – A-Frame</title>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+</head>
+
+<body>
+<a-scene background="color: #050b2c">
+
+  <!-- ASSETS -->
+  <a-assets>
+    <img id="sunTex" src="texture/2k_sun.jpg">
+    <img id="mercuryTex" src="texture/2k_mercury.jpg">
+    <img id="venusTex" src="texture/2k_venus_surface.jpg">
+    <img id="earthTex" src="texture/2k_earth_daymap.jpg">
+    <img id="moonTex" src="texture/2k_moon.jpg">
+    <img id="marsTex" src="texture/2k_mars.jpg">
+    <img id="jupiterTex" src="texture/2k_jupiter.jpg">
+    <img id="saturnTex" src="texture/2k_saturn.jpg">
+    <img id="saturnRingTex" src="texture/2k_saturn_ring_alpha.png">
+    <img id="uranusTex" src="texture/2k_uranus.jpg">
+    <img id="neptuneTex" src="texture/2k_neptune.jpg">
+  </a-assets>
+
+  <!-- CAMERA -->
+  <a-entity position="0 4 18">
+    <a-camera></a-camera>
+  </a-entity>
+
+  <!-- LIGHT -->
+  <a-light type="point" intensity="2" position="0 0 0"></a-light>
+  <a-light type="ambient" intensity="0.05"></a-light>
+  <a-sphere
+  radius="250"
+  segments-width="64"
+  segments-height="64"
+  material="src: texture/2k_stars_milky_way.jpg; side: back; shader: flat">
+</a-sphere>
+
+
+  <a-entity position="0 0 0">
+
+  <!-- Sun Light -->
+  <a-light
+    type="point"
+    intensity="2.5"
+    distance="100"
+    decay="2"
+    color="#ffae42">
+  </a-light>
+
+  <!-- Sun Sphere -->
+  <a-sphere
+    radius="2.5"
+    material="
+      src: #sunTex;
+      emissiveIntensity: 1;
+      shader: standard;
+    "></a-sphere>
+</a-entity>
+
+  <!-- MERCURY -->
+  <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 4000">
+    <a-sphere radius="0.3" position="4 0 0" material="src: #mercuryTex"></a-sphere>
+  </a-entity>
+
+  <!-- VENUS -->
+  <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 7000">
+    <a-sphere radius="0.5" position="6 0 0" material="src: #venusTex"></a-sphere>
+  </a-entity>
+
+  <a-entity
+  animation="property: rotation; to: 0 360 0; loop: true; dur: 9000">
+
+  <!-- EARTH -->
+  <a-sphere
+    radius="0.6"
+    position="8 0 0"
+    material="src: #earthTex">
+  </a-sphere>
+
+  <!-- MOON ORBIT (around Earth) -->
+  <a-entity
+    position="8 0 0"
+    animation="property: rotation; to: 0 360 0; loop: true; dur: 1500">
+
+    <!-- MOON -->
+    <a-sphere
+      radius="0.15"
+      position="1 0 0"
+      material="src: #moonTex">
+    </a-sphere>
+
+  </a-entity>
+</a-entity>
+
+  <!-- MARS -->
+  <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 12000">
+    <a-sphere radius="0.45" position="10 0 0" material="src: #marsTex"></a-sphere>
+  </a-entity>
+
+  <!-- JUPITER -->
+  <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 20000">
+    <a-sphere radius="1.4" position="13 0 0" material="src: #jupiterTex"></a-sphere>
+  </a-entity>
+
+  <!-- SATURN -->
+<a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 26000">
+
+  <!-- Planet -->
+  <a-sphere
+    radius="1.2"
+    position="16 0 0"
+    material="src: #saturnTex">
+  </a-sphere>
+
+  <!-- Rings (FIXED) -->
+  <a-ring
+    radius-inner="1.4"
+    radius-outer="2.4"
+    rotation="90 0 0"
+    position="16 0 0"
+    material="
+      src: #saturnRingTex;
+      transparent: true;
+      alphaTest: 0.4;
+      side: double;
+      shader: flat;
+    ">
+  </a-ring>
+
+</a-entity>
+
+  <!-- URANUS -->
+  <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 32000">
+    <a-sphere radius="0.9" position="19 0 0" material="src: #uranusTex"></a-sphere>
+  </a-entity>
+
+  <!-- NEPTUNE -->
+  <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 38000">
+    <a-sphere radius="0.85" position="22 0 0" material="src: #neptuneTex"></a-sphere>
+  </a-entity>
+
+  
+</a-scene>
+</body>
+</html>
